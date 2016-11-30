@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>Extracting json from mfinante.ro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body ng-app='MfinanteApp'>
+   <div class="container"  ng-controller='FirmTableController as list'>
+    <h1>Date de pe ministerul finantelor</h1>
+
+    <div class="form-group">
+      <input type="text" ng-model="searchTerm" placeholder="codul fiscal" class="form-control">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="list.searchFirms(searchTerm);">Cauta firma!</button>
+    </div>
+	
+	<div class="items-list">
+	  <found-items 
+      	found="list.found" 
+      	title="{{ list.title }}"></found-items>
+	</div>
+    
+  </div>
+
+</body>
+</html>
